@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 
 namespace eShop_1.Controllers
 {
-    public class OrderController : Controller
+    public class UserController : Controller
     {
         private readonly AppDbContext _contex;
-        public OrderController(AppDbContext context)
+        public UserController(AppDbContext context)
         {
             _contex = context;
         }
         public async Task<IActionResult> Index()
         {
-            var allOrders = await _contex.Orders.ToListAsync();
+            var allProductCategories = await _contex.Users.ToListAsync();
             return View();
         }
     }
